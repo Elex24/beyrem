@@ -1,0 +1,273 @@
+ <!DOCTYPE html><html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Qurbon Hayiti Muborak</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      min-height: 100vh;
+      overflow-x: hidden;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #071b16, #0f3d2e, #1d5c42);
+      color: white;
+      position: relative;
+    }
+
+    .moon {
+      position: absolute;
+      top: 60px;
+      right: 8%;
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      background: #fff6cc;
+      box-shadow: 0 0 40px rgba(255,255,220,0.8);
+    }
+
+    .moon::after {
+      content: '';
+      position: absolute;
+      top: 10px;
+      left: 35px;
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      background: #0f3d2e;
+    }
+
+    .stars span {
+      position: absolute;
+      display: block;
+      width: 3px;
+      height: 3px;
+      background: white;
+      border-radius: 50%;
+      animation: blink 2s infinite ease-in-out;
+    }
+
+    @keyframes blink {
+      0%,100% { opacity: 0.2; }
+      50% { opacity: 1; }
+    }
+
+    .container {
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 30px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .card {
+      width: 100%;
+      max-width: 700px;
+      padding: 50px 35px;
+      border-radius: 30px;
+      background: rgba(255,255,255,0.08);
+      backdrop-filter: blur(15px);
+      border: 1px solid rgba(255,255,255,0.15);
+      text-align: center;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.35);
+      animation: fadeUp 1.2s ease;
+    }
+
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 4rem;
+      color: #ffe9a8;
+      margin-bottom: 15px;
+      line-height: 1.1;
+    }
+
+    .subtitle {
+      font-size: 1.2rem;
+      opacity: 0.9;
+      margin-bottom: 35px;
+    }
+
+    .message {
+      font-size: 1.05rem;
+      line-height: 1.9;
+      color: #f7f7f7;
+      margin-bottom: 35px;
+    }
+
+    .arabic {
+      font-size: 2rem;
+      margin-bottom: 20px;
+      color: #ffd76f;
+      font-family: serif;
+    }
+
+    .btn {
+      border: none;
+      padding: 15px 30px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, #f7d46b, #ffefb0);
+      color: #123d2d;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: 0.3s ease;
+      box-shadow: 0 6px 20px rgba(255,215,100,0.35);
+    }
+
+    .btn:hover {
+      transform: scale(1.05);
+    }
+
+    .hidden-message {
+      margin-top: 30px;
+      font-size: 1rem;
+      line-height: 1.8;
+      display: none;
+      animation: fade 0.7s ease;
+      color: #fff4c7;
+    }
+
+    @keyframes fade {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    .lantern {
+      position: absolute;
+      width: 45px;
+      animation: float 4s ease-in-out infinite;
+      opacity: 0.85;
+    }
+
+    .lantern.left {
+      left: 4%;
+      top: 20%;
+    }
+
+    .lantern.right {
+      right: 4%;
+      top: 30%;
+      animation-delay: 1.5s;
+    }
+
+    @keyframes float {
+      0%,100% {
+        transform: translateY(0px);
+      }
+      50% {
+        transform: translateY(-15px);
+      }
+    }
+
+    footer {
+      position: absolute;
+      bottom: 15px;
+      width: 100%;
+      text-align: center;
+      font-size: 0.9rem;
+      opacity: 0.7;
+      z-index: 2;
+    }
+
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 2.8rem;
+      }
+.card {
+        padding: 40px 25px;
+      }
+
+      .subtitle {
+        font-size: 1rem;
+      }
+
+      .message {
+        font-size: 0.95rem;
+      }
+
+      .moon {
+        width: 80px;
+        height: 80px;
+      }
+
+      .moon::after {
+        width: 80px;
+        height: 80px;
+        left: 22px;
+      }
+    }
+  </style></head>
+<body>  <div class="moon"></div>  <div class="stars">
+    <span style="top:10%;left:20%"></span>
+    <span style="top:15%;left:70%"></span>
+    <span style="top:30%;left:15%"></span>
+    <span style="top:40%;left:80%"></span>
+    <span style="top:70%;left:10%"></span>
+    <span style="top:75%;left:90%"></span>
+    <span style="top:60%;left:60%"></span>
+    <span style="top:22%;left:50%"></span>
+  </div>  <img class="lantern left" src="https://cdn-icons-png.flaticon.com/512/2972/2972541.png" alt="lantern">
+  <img class="lantern right" src="https://cdn-icons-png.flaticon.com/512/2972/2972541.png" alt="lantern">  <div class="container">
+    <div class="card"><div class="arabic">عيد مبارك</div>
+
+  <h1>Qurbon Hayiti Muborak</h1>
+
+  <p class="subtitle">
+    Пусть этот светлый праздник принесёт мир, счастье и благословение.
+  </p>
+
+  <div class="message">
+    Желаю тебе и твоей семье крепкого здоровья, душевного спокойствия,
+    достатка и множества счастливых моментов.
+    Пусть все добрые намерения исполняются,
+    а каждый день будет наполнен теплом,
+    радостью и милостью.
+  </div>
+
+  <button class="btn" onclick="showWish()">
+    Открыть пожелание ✨
+  </button>
+
+  <div class="hidden-message" id="wish">
+    🌙 Пусть твой дом всегда будет наполнен светом,
+    любовь — искренней,
+    а сердце — спокойным.
+    <br><br>
+    С праздником Курбан Хайит 🤍
+  </div>
+
+</div>
+
+  </div>  <footer>
+    Made with 🤍 for Qurbon Hayiti
+  </footer>  <script>
+    function showWish() {
+      const wish = document.getElementById('wish');
+
+      if (wish.style.display === 'block') {
+        wish.style.display = 'none';
+      } else {
+        wish.style.display = 'block';
+      }
+    }
+  </script></body>
+</html>
